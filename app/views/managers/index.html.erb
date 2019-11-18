@@ -1,6 +1,12 @@
-<h1>Managers#index</h1>
-
 <%= button_to "Log Out", destroy_user_session_path, method: :delete %>
 <h2>Welcome <%= current_user.first_name %></h2>
-
-<p>Find me in app/views/managers/index.html.erb</p>
+<hr />
+<%= link_to "Add a League", new_manager_path %>
+<h3>Your leagues</h3>
+<ul>
+  <% @managers.each do |manager| %>
+    <li>
+    <h1><%= manager.name %></h1>
+    </li>
+  <% end %>
+</ul>

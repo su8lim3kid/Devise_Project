@@ -3,7 +3,7 @@ root "managers#index"
 
 
   devise_for :users
-  resources :leauges
+  resources :managers
 
   
 end

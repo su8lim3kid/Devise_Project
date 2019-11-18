@@ -13,7 +13,7 @@ class ManagersController < ApplicationController
   end
 
   def create 
-    @manager = current_user.managers.new(account_params)
+    @manager = current_user.managers.new(manager_params)
     if@manager.save
       redirect_to managers_path
     else render :new
@@ -26,7 +26,7 @@ class ManagersController < ApplicationController
 
   def update
     if @manager.update(account_params)
-      redirect_to accounts_path
+      redirect_to managers_path
     else :edit
     end
   end
