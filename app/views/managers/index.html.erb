@@ -2,11 +2,14 @@
 <h2>Welcome <%= current_user.first_name %></h2>
 <hr />
 <%= link_to "Add a League", new_manager_path %>
-<h3>Your leagues</h3>
+
+<h3>Your Leagues</h3>
 <ul>
   <% @managers.each do |manager| %>
     <li>
-    <h1><%= manager.name %></h1>
-    </li>
+      <h1><%= manager.name %></h1>
+     </li>
+    <%= link_to "Edit", edit_manager_path(manager) %> |
+    <%= link_to "Destroy", manager_path(manager), method: :delete %>
   <% end %>
 </ul>
