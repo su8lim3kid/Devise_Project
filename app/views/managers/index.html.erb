@@ -1,14 +1,18 @@
-<%= button_to "Log Out", destroy_user_session_path, method: :delete %>
-<h2>Welcome <%= current_user.first_name %></h2>
-<hr />
-<%= link_to "Add a League", new_manager_path %>
-
+<nav>
+<div class="nav-wrapper">
+  <a href="#" class="brand-logo right">League Manager</a>
+  <ul id="nav-mobile" class="left hide-on-med-and-down">
+    <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
+    <li><%= link_to "Add a League", new_manager_path %></li>
+  </ul>
+</div>
+</nav>
 <h3>Your Leagues</h3>
 <ul>
   <% @managers.each do |manager| %>
     <li>
-      <h1><%= manager.name %></h1>
-     </li>
+      <h4><%= manager.name %></h4>
+      
     <%= link_to "Edit", edit_manager_path(manager) %> |
     <%= link_to "Destroy", manager_path(manager), method: :delete %>
   <% end %>

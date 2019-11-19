@@ -22,10 +22,12 @@ class ManagersController < ApplicationController
 
 
   def edit
+    render partial: "form"
+ 
   end
 
   def update
-    if @manager.update(account_params)
+    if @manager.update(manager_params)
       redirect_to managers_path
     else :edit
     end
